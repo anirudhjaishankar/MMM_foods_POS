@@ -18,7 +18,6 @@ const Layout = ({ children }: LayoutProps) => {
         <Box width="full" as="main" marginY={22}>
           {children}
         </Box>
-        <Footer />
       </Flex>
     </Box>
   );

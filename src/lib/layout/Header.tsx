@@ -1,4 +1,4 @@
-import { Box, Flex } from "@chakra-ui/react";
+import { Box, Flex, Button, Heading } from "@chakra-ui/react";
 
 import ThemeToggle from "./ThemeToggle";
 
@@ -9,10 +9,15 @@ const Header = () => {
       width="full"
       align="center"
       alignSelf="flex-start"
-      justifyContent="center"
+      justifyContent="space-between"
       gridGap={2}
     >
-      <Box marginLeft="auto">
+      <Box>
+        <Heading size="sm">POS</Heading>
+      </Box>
+      <Box>
+        <Button variant="ghost">Orders</Button>
+        <Button variant="ghost">Menu</Button>
         <ThemeToggle />
       </Box>
     </Flex>
