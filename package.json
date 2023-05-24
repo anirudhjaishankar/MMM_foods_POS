@@ -1,8 +1,8 @@
 {
-  "name": "vite-react-chakra-starter",
+  "name": "mmm-foods-pos",
   "version": "0.1.0",
   "private": true,
-  "author": "sozonome",
+  "author": "Anirudh J",
   "scripts": {
     "dev": "vite",
     "build": "pnpm type-check && vite build",
