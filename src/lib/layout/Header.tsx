@@ -1,11 +1,13 @@
 import { Box, Flex, Button, Heading } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 
 import ThemeToggle from "./ThemeToggle";
 
 const Header = () => {
+  const navigate = useNavigate();
+
   return (
     <Flex
-      as="header"
       width="full"
       align="center"
       alignSelf="flex-start"
@@ -16,8 +18,22 @@ const Header = () => {
         <Heading size="sm">POS</Heading>
       </Box>
       <Box>
-        <Button variant="ghost">Orders</Button>
-        <Button variant="ghost">Menu</Button>
+        <Button
+          variant="ghost"
+          onClick={() => {
+            navigate("/");
+          }}
+        >
+          Orders
+        </Button>
+        <Button
+          variant="ghost"
+          onClick={() => {
+            navigate("/menu");
+          }}
+        >
+          Menu
+        </Button>
         <ThemeToggle />
       </Box>
     </Flex>
