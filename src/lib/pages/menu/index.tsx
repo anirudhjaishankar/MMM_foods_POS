@@ -1,12 +1,5 @@
-import {
-  Flex,
-  Box,
-  Text,
-  Button,
-  Container,
-  Card,
-  Divider,
-} from "@chakra-ui/react";
+import { Flex, Box, Text, Button, Divider } from "@chakra-ui/react";
+import { MenuItem } from "lib/components/auth/MenuItem";
 import { RiAddCircleFill } from "react-icons/ri";
 
 const Menu = () => {
@@ -16,7 +9,7 @@ const Menu = () => {
         <Box>
           <Flex justifyContent="space-between" alignItems="center">
             <Box>
-              <Text fontSize="5xl">Menu</Text>
+              <Text fontSize="4xl">Menu</Text>
             </Box>
             <Box>
               <Button leftIcon={<RiAddCircleFill />}>New Item</Button>
@@ -25,9 +18,9 @@ const Menu = () => {
           <Divider />
         </Box>
         <Box marginY={5}>
-          <Container>
-            <Card>Some content</Card>
-          </Container>
+          <MenuItem />
+          <MenuItem />
+          <MenuItem />
         </Box>
       </Box>
     </Flex>
