@@ -1,8 +1,19 @@
 import { Flex, Box, Text, Button, Divider } from "@chakra-ui/react";
-import { MenuItem } from "lib/components/auth/MenuItem";
+import type { ReactElement } from "react";
+import { useEffect, useState } from "react";
 import { RiAddCircleFill } from "react-icons/ri";
 
+import { getAllMenuItems } from "../../../services/menu";
+import { MenuItem } from "lib/components/MenuItem";
+import type MenuItemType from "lib/models/menu-item";
+
 const Menu = () => {
+  const [menuItems, setMenuItems] = useState<Array<MenuItemType>>([]);
+  useEffect(() => {
+    getAllMenuItems().then((allMenuItems: Array<MenuItemType>) => {
+      setMenuItems(allMenuItems);
+    });
+  }, []);
   return (
     <Flex flexDirection="column">
       <Box>
@@ -18,9 +29,11 @@ const Menu = () => {
           <Divider />
         </Box>
         <Box marginY={5}>
-          <MenuItem />
-          <MenuItem />
-          <MenuItem />
+          {menuItems.map(
+            (m: MenuItemType): ReactElement<any, any> => (
+              <MenuItem name={m.name} price={m.price} />
+            )
+          )}
         </Box>
       </Box>
     </Flex>

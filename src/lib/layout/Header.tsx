@@ -23,6 +23,7 @@ const Header = () => {
           onClick={() => {
             navigate("/");
           }}
+          m={1}
         >
           Orders
         </Button>
@@ -31,6 +32,7 @@ const Header = () => {
           onClick={() => {
             navigate("/menu");
           }}
+          m={1}
         >
           Menu
         </Button>
